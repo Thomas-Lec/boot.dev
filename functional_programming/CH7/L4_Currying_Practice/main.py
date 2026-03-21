@@ -11,4 +11,3 @@ def lines_with_sequence(char):
             return counter
         return with_char_with_length
     return with_char
-
