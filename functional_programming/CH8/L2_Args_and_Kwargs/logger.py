@@ -7,5 +7,4 @@ def args_logger(*args, **kwargs):
 
     for key, value in sorted(kwargs.items()):
         print("* {0}: {1}".format(key,value))
-        counter +=1 
 
