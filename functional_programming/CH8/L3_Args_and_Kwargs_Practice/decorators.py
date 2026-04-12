@@ -1,0 +1,6 @@
+def configure_plugin_decorator(func):
+    def wrapper(*args):
+        kwargs = dict(args)
+        return func(**kwargs)
+    return wrapper
+    
