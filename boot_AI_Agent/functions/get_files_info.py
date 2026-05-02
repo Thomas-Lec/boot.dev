@@ -13,10 +13,12 @@ def get_files_info(working_directory, directory="."):
 
     try:
 
+        results = []
         for target_dir_item in os.listdir(target_dir):
-            file_size = os.path.getsize(target_dir_item)
-            is_dir = os.path.isdir(target_dir_item)
-            return f"- {target_dir_item}: file_size={file_size} bytes, is_dir={isdir}"
+            file_size = os.path.getsize(os.path.join(target_dir, target_dir_item))
+            is_dir = os.path.isdir(os.path.join(target_dir, target_dir_item))
+            results.append(f"- {target_dir_item}: file_size={file_size} bytes, is_dir={is_dir}")
+        return "\n".join(results)
 
     except Exception as e:
         return f"Error: unexpected Error occured {e}" 
