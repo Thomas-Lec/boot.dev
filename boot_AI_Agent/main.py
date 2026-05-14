@@ -6,6 +6,7 @@ from google import genai
 from google.genai import types
 from prompts import *
 from config import *
+from call_function import *
 
 
 def main():
@@ -32,6 +33,7 @@ def generate_content(client, messages, verbose):
         model=model_name,
         contents=messages,
         config=types.GenerateContentConfig(
+            tools=[available_functions],
             system_instruction=system_prompt,
             temperature=0),
     )
