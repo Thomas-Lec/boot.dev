@@ -4,9 +4,10 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+
 from prompts import *
 from config import *
-from call_function import *
+from call_function import available_functions
 
 
 def main():
@@ -50,6 +51,7 @@ def generate_content(client, messages, verbose):
     else:
         print("Response:")
         print(response.text)
+        return
 
 
 if __name__ == "__main__":
