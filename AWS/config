@@ -1,0 +1,4 @@
+Host patientping
+  HostName 100.59.131.75
+  User ec2-user
+  IdentityFile ~/.ssh/patientping-key
